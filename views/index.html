@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANNUNAKI V1.1.0 | STANY TECH</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: white;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Background Animation */
+        .bg-animate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%);
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            filter: blur(80px);
+            opacity: 0.2;
+            animation: move 10s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(100px, 100px); }
+        }
+
+        /* Main Container */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        .version {
+            font-size: 0.8rem;
+            background: var(--primary);
+            color: black;
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        h2 { font-weight: 400; margin-bottom: 10px; font-size: 1.2rem; opacity: 0.8; }
+
+        /* Input Styling */
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+
+        /* Button Styling */
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(112, 0, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(112, 0, 255, 0.5);
+        }
+
+        /* Pairing Code Display */
+        #code-display {
+            margin-top: 25px;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 8px;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Footer Info */
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        .dev { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .feat-item {
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            border: 1px solid var(--border);
+        }
+
+        .feat-item i { color: var(--primary); margin-right: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg-animate">
+        <div class="circle" style="width: 400px; height: 400px; top: -100px; right: -100px;"></div>
+        <div class="circle" style="width: 300px; height: 300px; bottom: -50px; left: -50px; background: var(--secondary);"></div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="logo">ANNUNAKI</div>
+            <div class="version">V1.1.0 PREMIUM</div>
+            
+            <h2>Link Your WhatsApp</h2>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 25px;">Enter your phone number with country code</p>
+
+            <div class="input-group">
+                <input type="text" id="phoneNumber" placeholder="e.g. 2557XXXXXXXX">
+            </div>
+
+            <button class="btn" onclick="getPairingCode()">Generate Pairing Code</button>
+
+            <div id="loading" style="display:none; margin-top:20px;">
+                <i class="fas fa-circle-notch fa-spin"></i> Connecting...
+            </div>
+
+            <div id="code-display">XXXX-XXXX</div>
+
+            <div class="features">
+                <div class="feat-item"><i class="fas fa-shield-alt"></i> Anti-Delete</div>
+                <div class="feat-item"><i class="fas fa-link"></i> Anti-Link</div>
+                <div class="feat-item"><i class="fas fa-user-secret"></i> View Once</div>
+                <div class="feat-item"><i class="fas fa-robot"></i> Auto-Status</div>
+            </div>
+
+            <div class="footer">
+                Developed by <a href="#" class="dev">STANY TECH</a><br>
+                &copy; 2026 ANNUNAKI Automation
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function getPairingCode() {
+            const num = document.getElementById('phoneNumber').value;
+            const codeDisp = document.getElementById('code-display');
+            const load = document.getElementById('loading');
+
+            if(!num) return alert("Please enter your number!");
+
+            load.style.display = 'block';
+            codeDisp.style.display = 'none';
+
+            // Hapa utatuma request kwa Backend yako (Express API)
+            // Kwa sasa tuna-simulate muonekano
+            setTimeout(() => {
+                load.style.display = 'none';
+                codeDisp.innerText = "A7BK-92LZ"; // Mfano wa code itakayotoka kwa Baileys
+                codeDisp.style.display = 'block';
+                
+                // Audio Effect (Premium feel)
+                let audio = new Audio('https://www.soundjay.com/buttons/sounds/button-50.mp3');
+                audio.play();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
